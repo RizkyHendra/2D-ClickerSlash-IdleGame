@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: d515aecd2ce1aad49b11a1b57c7badb2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7853461682229021927
+    second: GroundCombo1_0
+  - first:
+      213: -8762777182498544172
+    second: GroundCombo1_1
+  - first:
+      213: -5305324066142844465
+    second: GroundCombo1_2
+  - first:
+      213: 3491753222016160268
+    second: GroundCombo1_3
+  - first:
+      213: 2792292253862879757
+    second: GroundCombo1_4
+  - first:
+      213: -6788829285814080365
+    second: GroundCombo1_5
+  - first:
+      213: -8197042651871414173
+    second: GroundCombo1_6
+  - first:
+      213: 5716873277808743184
+    second: GroundCombo1_7
+  - first:
+      213: -5337517672722235878
+    second: GroundCombo1_8
+  - first:
+      213: -7714147623953230602
+    second: GroundCombo1_9
+  - first:
+      213: 2356243887766415787
+    second: GroundCombo1_10
+  - first:
+      213: 8491700220694720263
+    second: GroundCombo1_11
+  - first:
+      213: 7728731621303366241
+    second: GroundCombo1_12
+  - first:
+      213: 1114912928494721
+    second: GroundCombo1_13
+  - first:
+      213: -3262964596912187372
+    second: GroundCombo1_14
+  - first:
+      213: 8531125531330232371
+    second: GroundCombo1_15
+  - first:
+      213: -6153533702354067140
+    second: GroundCombo1_16
+  - first:
+      213: 3877575501670570682
+    second: GroundCombo1_17
+  - first:
+      213: -6414305614632589874
+    second: GroundCombo1_18
+  - first:
+      213: -8121146561762605743
+    second: GroundCombo1_19
+  - first:
+      213: 7900305899161206941
+    second: GroundCombo1_20
+  - first:
+      213: -3037831036000634424
+    second: GroundCombo1_21
+  - first:
+      213: 1404614734334006299
+    second: GroundCombo1_22
+  - first:
+      213: 1752459273281548695
+    second: GroundCombo1_23
+  - first:
+      213: 5006999252801159243
+    second: GroundCombo1_24
+  - first:
+      213: 3269274210034609623
+    second: GroundCombo1_25
+  - first:
+      213: -2222461514480855813
+    second: GroundCombo1_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundCombo1_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5a647649c546680800000000000000
+      internalID: -8762777182498544172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 70
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc98933eed3bf56b0800000000000000
+      internalID: -5305324066142844465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02629cb20730c620800000000000000
+      internalID: 2792292253862879757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e750fb4f35de5b0800000000000000
+      internalID: -5337517672722235878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_12
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162bd140678f14b60800000000000000
+      internalID: 7728731621303366241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31aac553b14a9aa0800000000000000
+      internalID: -6153533702354067140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_20
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d904d609b5683ad60800000000000000
+      internalID: 7900305899161206941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundCombo1_24
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 0
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b400cddca4f6c7540800000000000000
+      internalID: 5006999252801159243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
