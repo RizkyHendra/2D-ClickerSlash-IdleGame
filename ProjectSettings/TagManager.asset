@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Art
+    uniqueID: 2680856839
+    locked: 0
   - name: Object
     uniqueID: 1942163083
     locked: 0

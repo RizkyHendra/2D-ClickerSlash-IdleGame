@@ -53,6 +53,8 @@
     <UnityVersion>2019.4.35f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Enemy\MoveEnemy.cs" />
+    <Compile Include="Assets\Script\Object\PartikelSystemBlood.cs" />
     <Compile Include="Assets\Script\Player\Move.cs" />
   </ItemGroup>
   <ItemGroup>

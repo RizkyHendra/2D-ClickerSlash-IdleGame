@@ -22,7 +22,7 @@ public class Move : MonoBehaviour
     {
         if(Input.GetButtonDown("Jump") && !die && rb.velocity.y == 0)
         {
-            rb.AddForce(Vector2.up * 600f);
+            rb.AddForce(Vector2.up * 500f);
         }
         if(Input.GetKey(KeyCode.LeftShift))
         {
@@ -30,7 +30,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            moveSpeed = 5;
+            moveSpeed = 4;
         }
         setAnimationState();
         if(!die)
@@ -60,12 +60,12 @@ public class Move : MonoBehaviour
             anim.SetBool("Jump", false);
             anim.SetBool("Fall", false);
         }
-        if (Mathf.Abs(dirX) == 5 && rb.velocity.y == 0)
+        if (Mathf.Abs(dirX) == 4 && rb.velocity.y == 0)
         {
             anim.SetBool("Run", true);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && Mathf.Abs(dirX) == 5)
+        if (Input.GetKey(KeyCode.DownArrow) && Mathf.Abs(dirX) == 4)
         {
             anim.SetBool("Dash", true);
         }
