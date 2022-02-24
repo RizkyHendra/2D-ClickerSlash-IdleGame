@@ -5,24 +5,29 @@ using UnityEngine;
 public class MoveEnemy : MonoBehaviour
 {
     public GameObject blood;
+
+    // HitPoint
+    public float hitPoint;
+    public float maxHitPoint = 5;
+    public EnemyHealth HealthBar;
     void Start()
     {
-        
+        hitPoint = maxHitPoint;
+        HealthBar.setHealth(hitPoint, maxHitPoint);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void TakeHit(float damage)
     {
-        if(collision.gameObject.tag.Equals("Bullet"))
+        hitPoint -= damage;
+        HealthBar.setHealth(hitPoint, maxHitPoint);
+        if (hitPoint <= 0)
         {
-            Instantiate(blood, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
             Destroy(gameObject);
+            Instantiate(blood, transform.position, Quaternion.identity);
         }
     }
+
+  
 }
