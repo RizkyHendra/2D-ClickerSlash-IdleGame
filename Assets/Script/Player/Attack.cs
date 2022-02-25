@@ -13,6 +13,8 @@ public class Attack : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
+
+    public GameControl Amount;
     public int combo = 0;
     void Start()
     {
@@ -26,9 +28,11 @@ public class Attack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+
                 combo++;
                 if (combo == 1)
                 {
+                    Amount.IncreseGoldAmount() ;
                     AttackMalee1();
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
@@ -56,6 +60,7 @@ public class Attack : MonoBehaviour
         Collider2D[] hitEnemy =  Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach(Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
@@ -67,6 +72,7 @@ public class Attack : MonoBehaviour
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
@@ -78,6 +84,7 @@ public class Attack : MonoBehaviour
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
