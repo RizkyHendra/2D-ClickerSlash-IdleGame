@@ -26,6 +26,7 @@ public class MoveEnemy : MonoBehaviour
         HealthBar.setHealth(hitPoint, maxHitPoint);
         if (hitPoint <= 0)
         {
+            ScoreScirp.scoreValue += 10;
             StartCoroutine("Die");
 
         }
