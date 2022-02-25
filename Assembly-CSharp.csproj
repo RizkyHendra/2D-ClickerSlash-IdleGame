@@ -57,6 +57,8 @@
     <Compile Include="Assets\Script\Enemy\EnemyHitSword.cs" />
     <Compile Include="Assets\Script\Enemy\MoveEnemy.cs" />
     <Compile Include="Assets\Script\Enemy\Spawner.cs" />
+    <Compile Include="Assets\Script\Enemy\SpawnerLong.cs" />
+    <Compile Include="Assets\Script\Object\GameManager.cs" />
     <Compile Include="Assets\Script\Object\PartikelSystemBlood.cs" />
     <Compile Include="Assets\Script\Player\Attack.cs" />
     <Compile Include="Assets\Script\Player\Bullet.cs" />

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    //MOVE
     Rigidbody2D rb;
     Animator anim;
     float dirX, moveSpeed = 5f;
@@ -18,6 +19,23 @@ public class Move : MonoBehaviour
     private GameObject bullet;
     [SerializeField]
     private GameObject[] ammo;
+
+    // Malee Attack
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public Transform attackPoint;
+    public int attackDamage = 1;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
+    public int combo = 0;
+    //Switch Weapon
+    public int Switch = 1;
+
+    // Info Text
+    public GameObject InfoSelectSword;
+    public GameObject InfoSelectGun;
+
+
 
     private int ammoAmount;
 
@@ -55,10 +73,7 @@ public class Move : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal") * moveSpeed;
 
         // FIRE
-
-       
-        {
-            if (Input.GetButtonDown("Fire1") && ammoAmount > 0 && facingRight == false)
+            if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == false && Switch == 2)
             {
                 
                
@@ -70,7 +85,7 @@ public class Move : MonoBehaviour
             }
          
            
-                if (Input.GetButtonDown("Fire1") && ammoAmount > 0 && facingRight == true)
+                if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == true && Switch == 2)
                 {
                 
                 anim.SetTrigger("GunAttack");
@@ -79,16 +94,6 @@ public class Move : MonoBehaviour
                     ammoAmount -= 1;
                     ammo[ammoAmount].gameObject.SetActive(false);
                 }
-          
-            
-            
-        }
-       
-
-        
-           
-
-
             if (Input.GetKey(KeyCode.R))
             {
                 ammoAmount = 3;
@@ -98,12 +103,102 @@ public class Move : MonoBehaviour
                 }
             }
 
-        
+        // ATTACK
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetMouseButtonDown(0) && Switch == 1)
+            {
+                combo++;
+                if (combo == 1)
+                {
+                    AttackMalee1();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+                if (combo == 2)
+                {
+                    AttackMalee2();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+                if (combo == 3)
+                {
+                    AttackMalee3();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                    combo = 0;
+                }
+                combo = Mathf.Clamp(combo, 0, 3);
+
+            }
+        }
+
+
 
     }
 
-    
-     void FixedUpdate()
+   public void switch1()
+    {
+        Switch++;
+        if(Switch == 3)
+        {
+            Switch = 1;
+        }
+        if (Switch == 2) 
+        {
+            StartCoroutine("InfoSword");
+        }
+     
+        if (Switch == 1)
+        {
+            StartCoroutine("InfoGun");
+        }
+     
+
+
+
+
+    }
+
+    // ATTACK MALEE
+    void AttackMalee1()
+    {
+        anim.SetTrigger("Attack_1");
+        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemy)
+        {
+            enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
+
+
+        }
+    }
+    void AttackMalee2()
+    {
+        anim.SetTrigger("Attack_2");
+        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemy)
+        {
+            enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
+
+
+        }
+    }
+    void AttackMalee3()
+    {
+        anim.SetTrigger("Attack_3");
+        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemy)
+        {
+            enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
+
+
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    void FixedUpdate()
     {
         if(!Hurt)
      
@@ -159,5 +254,18 @@ public class Move : MonoBehaviour
         if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
             localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    public IEnumerator InfoSword()
+    {
+        InfoSelectGun.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        InfoSelectGun.SetActive(false);
+    }
+    public IEnumerator InfoGun()
+    {
+        InfoSelectSword.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        InfoSelectSword.SetActive(false);
     }
 }
