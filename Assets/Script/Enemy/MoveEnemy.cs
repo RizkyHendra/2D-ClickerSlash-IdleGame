@@ -36,7 +36,7 @@ public class MoveEnemy : MonoBehaviour
     {
         anim.SetTrigger("Die");
        
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
         Instantiate(blood, transform.position, Quaternion.identity);
 

@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
+    [Range(0f, 1f)]
+    public float AutoCollectPercentage = 0.1f;
+    // SCORE AUTOMATIC
+    public Text scoreText;
+    public float scoreAmount;
+    public float pointIncresePersecond;
+
     // Store Panel Object
     public Button RedTREX, BlueTREX, GreenTREX;
     public GameObject RedTREXSold, BlueTREXSold, GreenTREXSold;
@@ -13,13 +20,19 @@ public class GameControl : MonoBehaviour
     // Game Panel Object
     public GameObject TREXRED, TREXBLUE, TREXGREEN;
     public Text GoldText;
-    public static  int GoldAmount;
+    public static  float GoldAmount;
 
     // Common Variable
     private bool isTREXREDSold, isTREXBLUESold, isTREXGREENSold;
     public int TREXREDPRICE = 10, TREXBLUEPRICE = 20, TREXGREENPRICE = 30;
     void Start()
     {
+
+        // Waktu PerSecond
+        scoreAmount = 0f;
+        pointIncresePersecond = 1f;
+
+
         TREXRED.gameObject.SetActive(false);
         TREXBLUE.gameObject.SetActive(false);
         TREXGREEN.gameObject.SetActive(false);
@@ -36,13 +49,21 @@ public class GameControl : MonoBehaviour
     }
     void Update()
     {
-        GoldText.text = GoldAmount + " GOLD ";
+        // Time Persecond
+        scoreText.text = (int)scoreAmount + " GOLD / PERSECOND ";
+        scoreAmount += pointIncresePersecond * Time.unscaledDeltaTime;
+
+       if(scoreAmount >= 1f)
+        {
+            scoreAmount = 0f;
+        }
+        GoldText.text = (int)GoldAmount + " GOLD ";
         DoyouEnoguGold();
     }
 
     public   void IncreseGoldAmount()
     {
-        GoldAmount += 1;
+        GoldAmount += 3;
     }
     public void SellTREXRED()
     {
