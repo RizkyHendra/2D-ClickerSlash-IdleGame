@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    
-   
+
+    public GameControl Amount;
 
     private void Start()
     {
@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
         var enemy = collision.collider.GetComponent<MoveEnemy>();
         if(enemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.TakeHit(1);
         }
         Destroy(gameObject);

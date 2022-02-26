@@ -34,6 +34,7 @@ public class Move : MonoBehaviour
     // Info Text
     public GameObject InfoSelectSword;
     public GameObject InfoSelectGun;
+    public GameControl Amount;
 
 
 
@@ -75,8 +76,8 @@ public class Move : MonoBehaviour
         // FIRE
             if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == false && Switch == 2)
             {
-                
-               
+
+           
                 anim.SetTrigger("GunAttack");
                 var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
                 spawnedBullet.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500);
@@ -87,8 +88,8 @@ public class Move : MonoBehaviour
            
                 if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == true && Switch == 2)
                 {
-                
-                anim.SetTrigger("GunAttack");
+          
+            anim.SetTrigger("GunAttack");
                 var spawnedBullet = Instantiate(bullet, BARREl.position, BARREl.rotation);
                     spawnedBullet.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500);
                     ammoAmount -= 1;
@@ -164,6 +165,7 @@ public class Move : MonoBehaviour
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
@@ -175,6 +177,7 @@ public class Move : MonoBehaviour
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
@@ -186,6 +189,7 @@ public class Move : MonoBehaviour
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemy)
         {
+            Amount.IncreseGoldAmount();
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 

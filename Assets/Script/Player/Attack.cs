@@ -73,6 +73,7 @@ public class Attack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemy)
         {
             Amount.IncreseGoldAmount();
+            
             enemy.GetComponent<MoveEnemy>().TakeHit(attackDamage);
 
 
