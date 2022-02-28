@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    public GameObject blood;
+    //public GameObject blood;
 
     // HitPoint
     public Animator anim;
     public float hitPoint;
     public float maxHitPoint = 5;
     public EnemyHealth HealthBar;
+  
+    Rigidbody2D rb;
+
+      LayerMask playerLayer, enemyLayer;
     void Start()
     {
+       
+        
+       
         hitPoint = maxHitPoint;
         HealthBar.setHealth(hitPoint, maxHitPoint);
     }
@@ -28,6 +35,9 @@ public class MoveEnemy : MonoBehaviour
         {
             ScoreScirp.scoreValue += 10;
             StartCoroutine("Die");
+          
+            gameObject.layer = 9;
+
 
         }
     }
@@ -36,9 +46,9 @@ public class MoveEnemy : MonoBehaviour
     {
         anim.SetTrigger("Die");
        
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
-        Instantiate(blood, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+        //Instantiate(blood, transform.position, Quaternion.identity);
 
 
 

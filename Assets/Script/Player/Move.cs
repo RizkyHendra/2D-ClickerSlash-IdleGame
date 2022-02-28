@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+
     //MOVE
     Rigidbody2D rb;
     Animator anim;
@@ -36,6 +37,8 @@ public class Move : MonoBehaviour
     public GameObject InfoSelectGun;
     public GameControl Amount;
 
+   
+
 
 
     private int ammoAmount;
@@ -57,6 +60,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetButtonDown("Jump") && !die && rb.velocity.y == 0)
         {
             rb.AddForce(Vector2.up * 500f);

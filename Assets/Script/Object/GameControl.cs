@@ -5,8 +5,32 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
-    [Range(0f, 1f)]
-    public float AutoCollectPercentage = 0.1f;
+    private static GameControl _instance = null;
+
+    public static GameControl Instance
+
+    {
+
+        get
+
+        {
+
+            if (_instance == null)
+
+            {
+
+                _instance = FindObjectOfType<GameControl>();
+
+            }
+
+
+
+            return _instance;
+
+        }
+
+    }
+
     // SCORE AUTOMATIC
     public Text scoreText;
     public float scoreAmount;
@@ -19,8 +43,10 @@ public class GameControl : MonoBehaviour
 
     // Game Panel Object
     public GameObject TREXRED, TREXBLUE, TREXGREEN;
-    public Text GoldText;
-    public static  float GoldAmount;
+    public Text GoldText, goldpersecondText;
+    public  float GoldAmount;
+    public float GoldSecond;
+    
 
     // Common Variable
     private bool isTREXREDSold, isTREXBLUESold, isTREXGREENSold;
@@ -30,7 +56,9 @@ public class GameControl : MonoBehaviour
 
         // Waktu PerSecond
         scoreAmount = 0f;
-        pointIncresePersecond = 1f;
+
+        
+    
 
 
         TREXRED.gameObject.SetActive(false);
@@ -50,13 +78,13 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         // Time Persecond
-        scoreText.text = (int)scoreAmount + " GOLD / PERSECOND ";
-        scoreAmount += pointIncresePersecond * Time.unscaledDeltaTime;
+        GoldText.text = (int)GoldAmount + " GOLD  ";
+        GoldAmount += pointIncresePersecond * Time.unscaledDeltaTime;
+        goldpersecondText.text =  $" PER SECOND { GoldAmount.ToString("F1")} ";
+     
 
-       if(scoreAmount >= 1f)
-        {
-            scoreAmount = 0f;
-        }
+
+
         GoldText.text = (int)GoldAmount + " GOLD ";
         DoyouEnoguGold();
     }
