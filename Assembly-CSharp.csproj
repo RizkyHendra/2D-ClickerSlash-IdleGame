@@ -53,6 +53,7 @@
     <UnityVersion>2019.4.35f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\RespawnControl.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyHitSword.cs" />
     <Compile Include="Assets\Script\Enemy\MoveEnemy.cs" />

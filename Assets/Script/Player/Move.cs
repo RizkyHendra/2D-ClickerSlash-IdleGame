@@ -36,6 +36,7 @@ public class Move : MonoBehaviour
     public GameObject InfoSelectSword;
     public GameObject InfoSelectGun;
     public GameControl Amount;
+    public GameObject RELOAD;
 
    
 
@@ -60,7 +61,14 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(ammoAmount == 0)
+        {
+            RELOAD.SetActive(true);
+        }
+        else
+        {
+            RELOAD.SetActive(false);
+        }
         if(Input.GetButtonDown("Jump") && !die && rb.velocity.y == 0)
         {
             rb.AddForce(Vector2.up * 500f);
@@ -102,6 +110,7 @@ public class Move : MonoBehaviour
             if (Input.GetKey(KeyCode.R))
             {
                 ammoAmount = 3;
+            
                 for (int i = 0; i <= 2; i++)
                 {
                     ammo[i].gameObject.SetActive(true);
