@@ -89,8 +89,8 @@ public class Move : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == false && Switch == 2)
             {
 
-           
-                anim.SetTrigger("GunAttack");
+            Amount.IncreseGoldAmount();
+            anim.SetTrigger("GunAttack");
                 var spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
                 spawnedBullet.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500);
                 ammoAmount -= 1;
@@ -100,7 +100,7 @@ public class Move : MonoBehaviour
            
                 if (Input.GetMouseButtonDown(0) && ammoAmount > 0 && facingRight == true && Switch == 2)
                 {
-          
+            Amount.IncreseGoldAmount();
             anim.SetTrigger("GunAttack");
                 var spawnedBullet = Instantiate(bullet, BARREl.position, BARREl.rotation);
                     spawnedBullet.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500);
