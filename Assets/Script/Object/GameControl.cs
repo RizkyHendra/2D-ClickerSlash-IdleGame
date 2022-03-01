@@ -46,6 +46,9 @@ public class GameControl : MonoBehaviour
     public Text GoldText, goldpersecondText;
     public  float GoldAmount;
     public float GoldSecond;
+
+    // Game Loop Idle
+    public GameObject Demon, DemonPurple;
     
 
     // Common Variable
@@ -57,8 +60,10 @@ public class GameControl : MonoBehaviour
         // Waktu PerSecond
         scoreAmount = 0f;
 
-        
-    
+        Demon.gameObject.SetActive(true);
+        DemonPurple.gameObject.SetActive(false);
+
+
 
 
         TREXRED.gameObject.SetActive(false);
@@ -77,6 +82,15 @@ public class GameControl : MonoBehaviour
     }
     void Update()
     {
+
+        if(Demon == false)
+        {
+            DemonPurple.gameObject.SetActive(true);
+        }
+        if (DemonPurple == false)
+        {
+            DemonPurple.gameObject.SetActive(true);
+        }
         // Time Persecond
         GoldText.text = (int)GoldAmount + " GOLD  ";
         GoldAmount += pointIncresePersecond * Time.unscaledDeltaTime;

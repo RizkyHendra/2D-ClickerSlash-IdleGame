@@ -12,33 +12,26 @@ public class MoveEnemy : MonoBehaviour
     public float hitPoint;
     public float maxHitPoint = 5;
     public EnemyHealth HealthBar;
-    public GameObject Demon, DemonPurple;
+    public float speed;
+    Vector3 localScale;
 
 
     Rigidbody2D rb;
 
-      LayerMask playerLayer, enemyLayer;
+    
     void Start()
     {
-       
-        
-       
+        anim.SetBool("Walk", true);
+        localScale = transform.localScale;
+
         hitPoint = maxHitPoint;
+        rb = GetComponent<Rigidbody2D>();
         HealthBar.setHealth(hitPoint, maxHitPoint);
     }
 
     private void Update()
     {
-        if (Demon == false)
-        {
-            DemonPurple.SetActive(true);
-        }
-
-
-        if (DemonPurple == false)
-        {
-            Demon.SetActive(true);
-        }
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
 
@@ -55,6 +48,15 @@ public class MoveEnemy : MonoBehaviour
 
 
 
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            speed *= -1;
         }
     }
 

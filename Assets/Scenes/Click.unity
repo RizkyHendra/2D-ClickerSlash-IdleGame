@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 19813916}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19813914}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 561439184}
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -8.719255, y: 2.4776015}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 323298625}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -8.719255, y: 2.4776015}
@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &338234044
 Animator:
   serializedVersion: 3
@@ -852,8 +852,7 @@ MonoBehaviour:
   hitPoint: 0
   maxHitPoint: 5
   HealthBar: {fileID: 1527643441}
-  Demon: {fileID: 815627936}
-  DemonPurple: {fileID: 338234043}
+  speed: 0
 --- !u!1 &363235661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,7 +2532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815627936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 4.13, z: 4.5290713}
+  m_LocalPosition: {x: -0.34, y: 4.13, z: 4.5290713}
   m_LocalScale: {x: 4.210175, y: 4.4265122, z: 1}
   m_Children:
   - {fileID: 370611606}
@@ -2555,10 +2554,9 @@ MonoBehaviour:
   blood: {fileID: 187032099283305930, guid: ead168961322c9a4fa5648bd7bf55609, type: 3}
   anim: {fileID: 815627941}
   hitPoint: 0
-  maxHitPoint: 20
+  maxHitPoint: 1000
   HealthBar: {fileID: 370611607}
-  Demon: {fileID: 815627936}
-  DemonPurple: {fileID: 338234043}
+  speed: 2
 --- !u!61 &815627939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2593,19 +2591,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815627936}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!95 &815627941
 Animator:
   serializedVersion: 3
@@ -3464,7 +3462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428956757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44a516ac377e6b2468991f3cd412d8fc, type: 3}
   m_Name: 
@@ -6258,6 +6256,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7179284580165297874, guid: b9dd255992e302a49b24898191cf4f0f,
         type: 3}
+      propertyPath: Demon
+      value: 
+      objectReference: {fileID: 815627936}
+    - target: {fileID: 7179284580165297874, guid: b9dd255992e302a49b24898191cf4f0f,
+        type: 3}
       propertyPath: RedTREX
       value: 
       objectReference: {fileID: 411099936}
@@ -6296,6 +6299,11 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1428956759}
+    - target: {fileID: 7179284580165297874, guid: b9dd255992e302a49b24898191cf4f0f,
+        type: 3}
+      propertyPath: DemonPurple
+      value: 
+      objectReference: {fileID: 338234043}
     - target: {fileID: 7179284580165297874, guid: b9dd255992e302a49b24898191cf4f0f,
         type: 3}
       propertyPath: RedTREXSold
